@@ -30,11 +30,12 @@ public class CassandraConnect {
 		return result;
 	}
 	
-	/*public void insertNewEvent(Session session, TimeSeriesRecord timeSeriesRecord) {
+	public void insertNewEvent(Session session, TimeSeriesRecord timeSeriesRecord) {
 		
+		String query = "";
 		PreparedStatement prepared = session.prepare(
-				query:"insert into timeseries (event_type, event, insertion_time)" +
-						" values(?, ?, ?");
+				query = ("insert into timeseries (event_type, event, insertion_time) values(?, ?, ?)"));
+
 		
 		BoundStatement bound = prepared.bind(
 				timeSeriesRecord.getId(),
@@ -42,6 +43,6 @@ public class CassandraConnect {
 				timeSeriesRecord.getEventTime()
 				);
 		session.execute(bound);
-	}*/
+	}
 
 }
